@@ -1,0 +1,16 @@
+img{
+  width:50%;
+}
+#result_area{
+  display: none;
+
+}
+body{
+  background:url("../images/background.jpg");
+  color:#fff;
+}
+#fortune_area,
+#result_area{
+  margin-top:20vh;
+  text-align: center;
+}

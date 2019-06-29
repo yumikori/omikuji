@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    $(function () {
+      $('#start').click(function () {
+        var fortunes = [
+          "daikichi",
+          "chukichi",
+          "kichi",
+          "shokichi",
+          "kyo"
+        ];
+        var text = [
+          "最高の運気です",
+          "良い運気です",
+          "まあまあの運気です",
+          "少し良いことがあるかも",
+          "運気は下がり気味です"
+        ]
+        var numbers = Math.floor(Math.random() * fortunes.length);
+        var resultimg = '<img src="images/' + fortunes[numbers] + '.png" />';
+        var resultText = text[numbers];
+        $('#result').html(resultimg);
+        $('#text').text(resultText);
+        $('#fortune_area').hide();
+        $('#result_area').show();
+      });
+      $('#goback').click(function () {
+        $('#result_area').hide();
+        $('#fortune_area').show();
+      })
+    });
+  </script>
+</head>
+<body>
+  <div id="fortune_area">
+    <h1>今日のおみくじ</h1>
+    <img src="images/fortune_button.png" id="start" alt="">
+  </div>
+  <div id="result_area">
+    <div id="result"></div>
+    <img src="images/gotoback.png" id="goback" alt="">
+    <p id="text"></p>
+  </div>
+</body>
+</html>
